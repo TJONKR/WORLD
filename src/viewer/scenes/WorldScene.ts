@@ -2,6 +2,27 @@ declare const Phaser: any;
 
 const TILE_SIZE = 8;
 
+/** Decoration rendering config: shape, color, size (relative to TILE_SIZE) */
+interface DecoStyle {
+  shape: 'triangle' | 'circle' | 'diamond' | 'line';
+  color: number;
+  size: number; // 0-1 relative to tile
+}
+
+const DECO_STYLES: Record<string, DecoStyle> = {
+  deco_tree_pine:   { shape: 'triangle', color: 0x1b5e20, size: 0.8 },
+  deco_tree_oak:    { shape: 'circle',   color: 0x388e3c, size: 0.7 },
+  deco_tree_palm:   { shape: 'triangle', color: 0x66bb6a, size: 0.7 },
+  deco_rock_small:  { shape: 'circle',   color: 0x757575, size: 0.35 },
+  deco_rock_large:  { shape: 'circle',   color: 0x616161, size: 0.6 },
+  deco_flower:      { shape: 'diamond',  color: 0xe91e63, size: 0.35 },
+  deco_cactus:      { shape: 'line',     color: 0x2e7d32, size: 0.7 },
+  deco_mushroom:    { shape: 'circle',   color: 0xd32f2f, size: 0.3 },
+  deco_reed:        { shape: 'line',     color: 0x8bc34a, size: 0.6 },
+  deco_snowdrift:   { shape: 'diamond',  color: 0xffffff, size: 0.5 },
+  deco_seaweed:     { shape: 'line',     color: 0x00695c, size: 0.5 },
+};
+
 const BIOME_COLORS: Record<string, number> = {
   ocean:     0x2266aa,
   beach:     0xe8d88c,
@@ -98,11 +119,9 @@ export class WorldScene extends Phaser.Scene {
     const tileset = map.addTilesetImage('generated-tileset', tilesetKey, TILE_SIZE, TILE_SIZE, 0, 0);
     map.createLayer(0, tileset, 0, 0);
 
-    // Decoration layer (if any non-zero decorations exist)
+    // Decoration layer — draw shapes on a render texture
     if (this.worldData.decorations.some((d: number) => d !== 0)) {
-      const decoMap = this.make.tilemap({ data: mapData.decorations, tileWidth: TILE_SIZE, tileHeight: TILE_SIZE });
-      const decoTileset = decoMap.addTilesetImage('generated-tileset', tilesetKey, TILE_SIZE, TILE_SIZE, 0, 0);
-      decoMap.createLayer(0, decoTileset, 0, 0);
+      this.renderDecorations(width, height);
     }
 
     // Camera setup
@@ -317,6 +336,47 @@ export class WorldScene extends Phaser.Scene {
     lines.push(`Pos: ${worldX}, ${worldY}`);
 
     this.hoverInfo.setText(lines.join('\n'));
+  }
+
+  private renderDecorations(width: number, height: number): void {
+    const { decorations } = this.worldData;
+    const gfx = this.add.graphics();
+    const half = TILE_SIZE / 2;
+
+    for (let y = 0; y < height; y++) {
+      for (let x = 0; x < width; x++) {
+        const decoId = decorations[y * width + x];
+        if (decoId === 0) continue;
+
+        const def = this.tileDefMap.get(decoId);
+        if (!def) continue;
+
+        const style = DECO_STYLES[def.name];
+        if (!style) continue;
+
+        const cx = x * TILE_SIZE + half;
+        const cy = y * TILE_SIZE + half;
+        const r = (TILE_SIZE * style.size) / 2;
+
+        gfx.fillStyle(style.color, 0.9);
+
+        switch (style.shape) {
+          case 'circle':
+            gfx.fillCircle(cx, cy, r);
+            break;
+          case 'triangle':
+            gfx.fillTriangle(cx, cy - r, cx - r, cy + r, cx + r, cy + r);
+            break;
+          case 'diamond':
+            gfx.fillTriangle(cx, cy - r, cx - r, cy, cx + r, cy);
+            gfx.fillTriangle(cx, cy + r, cx - r, cy, cx + r, cy);
+            break;
+          case 'line':
+            gfx.fillRect(cx - 1, cy - r, 2, r * 2);
+            break;
+        }
+      }
+    }
   }
 
   private addErrorText(msg: string): void {

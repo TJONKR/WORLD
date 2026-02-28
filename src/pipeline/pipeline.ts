@@ -5,6 +5,8 @@ import type { TileGrid, WorldBlueprint } from '../types/index.js';
 import { generateBlueprint } from '../layer1-llm/generator.js';
 import { generateTileGrid } from '../layer2-wfc/generator.js';
 import { applyNoise } from '../layer3-noise/generator.js';
+import { applyDecorations } from '../layer4-decorations/generator.js';
+import { placeStructures } from '../layer5-structures/generator.js';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 
@@ -48,5 +50,15 @@ export async function generateWorld(config: WorldConfig): Promise<TileGrid> {
   const finalGrid = applyNoise(rawGrid, seed);
   console.log(`[Layer 3] Applied noise: ${finalGrid.tileDefs.length} tile types (including variants)`);
 
-  return finalGrid;
+  // Layer 4: Decoration overlay
+  console.log('[Layer 4] Generating decoration overlay...');
+  const decoratedGrid = applyDecorations(finalGrid, seed);
+  const decoCount = decoratedGrid.decorations.filter(d => d !== 0).length;
+  console.log(`[Layer 4] Placed ${decoCount} decorations`);
+
+  // Layer 5: Multi-tile structures
+  console.log('[Layer 5] Placing structures...');
+  const structuredGrid = placeStructures(decoratedGrid, seed);
+
+  return structuredGrid;
 }

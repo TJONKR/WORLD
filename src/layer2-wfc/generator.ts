@@ -50,6 +50,8 @@ export function generateTileGrid(
   seed: string,
   regionSize: number = DEFAULT_REGION_SIZE
 ): TileGrid {
+  // WFC runs at a small internal size, then tiles up to fill the region
+  const WFC_SIZE = Math.min(regionSize, 32);
   const totalWidth = blueprint.width * regionSize;
   const totalHeight = blueprint.height * regionSize;
   const terrain = new Array<number>(totalWidth * totalHeight).fill(0);
@@ -128,24 +130,28 @@ export function generateTileGrid(
     }
 
     const regionSeed = `${seed}-r${region.gridX},${region.gridY}`;
-    const observed = runWFC(config, regionSize, regionSize, regionSeed);
+    const observed = runWFC(config, WFC_SIZE, WFC_SIZE, regionSeed);
 
-    let regionTiles: number[];
+    // Build a small WFC tile patch
+    let wfcPatch: number[];
     if (observed) {
-      regionTiles = observed.map(idx => {
+      wfcPatch = observed.map(idx => {
         const rule = config.tileIndexMap[idx];
         return rule ? rule.id : getPrimaryTile(region.biome).id;
       });
     } else {
       const primary = getPrimaryTile(region.biome);
-      regionTiles = new Array(regionSize * regionSize).fill(primary.id);
+      wfcPatch = new Array(WFC_SIZE * WFC_SIZE).fill(primary.id);
     }
 
+    // Tile the small WFC patch across the full region
     const baseX = region.gridX * regionSize;
     const baseY = region.gridY * regionSize;
     for (let ly = 0; ly < regionSize; ly++) {
       for (let lx = 0; lx < regionSize; lx++) {
-        terrain[(baseY + ly) * totalWidth + (baseX + lx)] = regionTiles[ly * regionSize + lx];
+        const srcY = ly % WFC_SIZE;
+        const srcX = lx % WFC_SIZE;
+        terrain[(baseY + ly) * totalWidth + (baseX + lx)] = wfcPatch[srcY * WFC_SIZE + srcX];
       }
     }
   }
@@ -193,10 +199,23 @@ function blendAllBorders(
     }
   }
 
+  // Blend range: only process tiles within this distance of a region border
+  const BLEND_RANGE = Math.ceil(regionSize * 0.7);
+
   for (let ty = 0; ty < totalHeight; ty++) {
+    const gy = Math.floor(ty / regionSize);
+    const ly = ty % regionSize;
+    const distToBorderY = Math.min(ly, regionSize - 1 - ly);
+
     for (let tx = 0; tx < totalWidth; tx++) {
       const gx = Math.floor(tx / regionSize);
-      const gy = Math.floor(ty / regionSize);
+      const lx = tx % regionSize;
+      const distToBorderX = Math.min(lx, regionSize - 1 - lx);
+      const distToBorder = Math.min(distToBorderX, distToBorderY);
+
+      // Skip tiles far from any border — they don't need blending
+      if (distToBorder >= BLEND_RANGE) continue;
+
       const myIdx = gy * blueprint.width + gx;
       const myBiome = blueprint.regions[myIdx]?.biome;
       if (!myBiome) continue;
@@ -204,14 +223,7 @@ function blendAllBorders(
       // Tile variant noise (0..1) — continuous across regions
       const variantNoise = (noisePick(tx * 0.18, ty * 0.18) + 1) / 2;
 
-      // Check if near any region border (within blend range)
-      const lx = tx % regionSize;
-      const ly = ty % regionSize;
-      const distToBorderX = Math.min(lx, regionSize - 1 - lx);
-      const distToBorderY = Math.min(ly, regionSize - 1 - ly);
-      const distToBorder = Math.min(distToBorderX, distToBorderY);
-
-      // Same-biome smoothing: always re-pick with noise to hide WFC seams
+      // Same-biome smoothing: re-pick with noise to hide WFC seams
       const hasSameBiomeNeighbor =
         (gx > 0 && blueprint.regions[myIdx - 1]?.biome === myBiome) ||
         (gx < blueprint.width - 1 && blueprint.regions[myIdx + 1]?.biome === myBiome) ||
@@ -224,7 +236,6 @@ function blendAllBorders(
       }
 
       // Cross-biome: use noise-warped Voronoi to determine which biome "owns" this tile
-      // Displace tile position with noise, then find nearest region center
       const dx = noiseX(tx * WARP_FREQ + 31.7, ty * WARP_FREQ + 47.3) * WARP_STRENGTH;
       const dy = noiseY(tx * WARP_FREQ + 73.1, ty * WARP_FREQ + 19.8) * WARP_STRENGTH;
       const warpedX = tx + dx;
@@ -233,7 +244,6 @@ function blendAllBorders(
       // Only check nearby region centers (3x3 around current region)
       let closestDist = Infinity;
       let closestBiome = myBiome;
-      let secondDist = Infinity;
 
       for (let oy = -1; oy <= 1; oy++) {
         for (let ox = -1; ox <= 1; ox++) {
@@ -243,18 +253,14 @@ function blendAllBorders(
           const c = centers[ny * blueprint.width + nx];
           const ddx = warpedX - c.cx;
           const ddy = warpedY - c.cy;
-          const dist = ddx * ddx + ddy * ddy; // squared distance is fine for comparison
+          const dist = ddx * ddx + ddy * ddy;
           if (dist < closestDist) {
-            secondDist = closestDist;
             closestDist = dist;
             closestBiome = c.biome;
-          } else if (dist < secondDist) {
-            secondDist = dist;
           }
         }
       }
 
-      // If the warped-Voronoi says a different biome than the grid, swap the tile
       if (closestBiome !== myBiome) {
         const tile = pickTileByNoise(closestBiome, variantNoise);
         terrain[ty * totalWidth + tx] = tile.id;

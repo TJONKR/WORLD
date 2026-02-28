@@ -18,6 +18,7 @@ function parseArgs(argv: string[]): {
   let output = 'output/world.json';
   let skipLLM = false;
   let blueprintPath: string | undefined;
+  let regionSize = 16;
 
   for (let i = 0; i < args.length; i++) {
     switch (args[i]) {
@@ -39,10 +40,13 @@ function parseArgs(argv: string[]): {
       case '--blueprint':
         blueprintPath = args[++i];
         break;
+      case '--region-size':
+        regionSize = parseInt(args[++i], 10);
+        break;
     }
   }
 
-  return { seed, width, height, output, skipLLM, blueprintPath };
+  return { seed, width, height, output, skipLLM, blueprintPath, regionSize };
 }
 
 async function main() {
@@ -59,6 +63,7 @@ async function main() {
     seed: config.seed,
     width: config.width,
     height: config.height,
+    regionSize: config.regionSize,
     skipLLM: config.skipLLM,
     blueprintPath: config.blueprintPath,
   });
