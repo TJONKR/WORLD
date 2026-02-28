@@ -56,9 +56,8 @@ export async function generateWorld(config: WorldConfig): Promise<TileGrid> {
   const decoCount = decoratedGrid.decorations.filter(d => d !== 0).length;
   console.log(`[Layer 4] Placed ${decoCount} decorations`);
 
-  // Layer 5: Multi-tile structures
-  console.log('[Layer 5] Placing structures...');
-  const structuredGrid = placeStructures(decoratedGrid, seed);
+  // Layer 5: Structures (disabled for now)
+  // const structuredGrid = placeStructures(decoratedGrid, seed);
 
-  return structuredGrid;
+  return decoratedGrid;
 }
