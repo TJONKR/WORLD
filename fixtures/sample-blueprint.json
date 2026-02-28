@@ -1,0 +1,85 @@
+{
+  "seed": "test-world",
+  "width": 2,
+  "height": 2,
+  "name": "Test Archipelago",
+  "description": "A small test world with ocean, beach, and grassland biomes.",
+  "regions": [
+    {
+      "id": "r-0-0",
+      "name": "Northern Sea",
+      "description": "Deep blue waters stretching to the horizon.",
+      "biome": "ocean",
+      "elevation": 0.1,
+      "moisture": 1.0,
+      "gridX": 0,
+      "gridY": 0,
+      "pointsOfInterest": [],
+      "transitions": {
+        "south": "gradual",
+        "east": "gradual"
+      }
+    },
+    {
+      "id": "r-1-0",
+      "name": "Coral Shore",
+      "description": "A sandy beach with coral fragments.",
+      "biome": "beach",
+      "elevation": 0.2,
+      "moisture": 0.7,
+      "gridX": 1,
+      "gridY": 0,
+      "pointsOfInterest": [
+        {
+          "name": "Shipwreck",
+          "description": "An old merchant vessel half-buried in sand.",
+          "x": 8,
+          "y": 4,
+          "type": "landmark"
+        }
+      ],
+      "transitions": {
+        "south": "gradual",
+        "west": "gradual"
+      }
+    },
+    {
+      "id": "r-0-1",
+      "name": "Shallow Bay",
+      "description": "Calm shallow waters with seagrass.",
+      "biome": "ocean",
+      "elevation": 0.15,
+      "moisture": 1.0,
+      "gridX": 0,
+      "gridY": 1,
+      "pointsOfInterest": [],
+      "transitions": {
+        "north": "gradual",
+        "east": "gradual"
+      }
+    },
+    {
+      "id": "r-1-1",
+      "name": "Green Meadow",
+      "description": "Rolling hills of green grass with wildflowers.",
+      "biome": "grassland",
+      "elevation": 0.4,
+      "moisture": 0.5,
+      "gridX": 1,
+      "gridY": 1,
+      "pointsOfInterest": [
+        {
+          "name": "Ancient Well",
+          "description": "A stone well marking an old settlement.",
+          "x": 10,
+          "y": 10,
+          "type": "structure"
+        }
+      ],
+      "transitions": {
+        "north": "gradual",
+        "west": "gradual"
+      }
+    }
+  ]
+}

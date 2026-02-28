@@ -1,0 +1,1065 @@
+{
+  "seed": "mega-world",
+  "width": 8,
+  "height": 8,
+  "name": "The Vast Continent",
+  "description": "A sprawling landmass surrounded by ocean, with forests at its heart.",
+  "regions": [
+    {
+      "id": "r-0-0",
+      "name": "Deep Waters",
+      "description": "A ocean region.",
+      "biome": "ocean",
+      "elevation": 0.08,
+      "moisture": 1,
+      "gridX": 0,
+      "gridY": 0,
+      "pointsOfInterest": [],
+      "transitions": {
+        "south": "gradual",
+        "east": "gradual"
+      }
+    },
+    {
+      "id": "r-1-0",
+      "name": "Whale Road",
+      "description": "A ocean region.",
+      "biome": "ocean",
+      "elevation": 0.1254648713412841,
+      "moisture": 1,
+      "gridX": 1,
+      "gridY": 0,
+      "pointsOfInterest": [],
+      "transitions": {
+        "south": "gradual",
+        "west": "gradual",
+        "east": "gradual"
+      }
+    },
+    {
+      "id": "r-2-0",
+      "name": "Tidal Reach",
+      "description": "A ocean region.",
+      "biome": "ocean",
+      "elevation": 0.042159875234603586,
+      "moisture": 0.9791926581726429,
+      "gridX": 2,
+      "gridY": 0,
+      "pointsOfInterest": [],
+      "transitions": {
+        "south": "gradual",
+        "west": "gradual",
+        "east": "gradual"
+      }
+    },
+    {
+      "id": "r-3-0",
+      "name": "Storm Sea",
+      "description": "A ocean region.",
+      "biome": "ocean",
+      "elevation": 0.06602922509005371,
+      "moisture": 0.9505003751699778,
+      "gridX": 3,
+      "gridY": 0,
+      "pointsOfInterest": [],
+      "transitions": {
+        "south": "gradual",
+        "west": "gradual",
+        "east": "gradual"
+      }
+    },
+    {
+      "id": "r-4-0",
+      "name": "Sapphire Bay",
+      "description": "A ocean region.",
+      "biome": "ocean",
+      "elevation": 0.1294679123311691,
+      "moisture": 0.9673178189568195,
+      "gridX": 4,
+      "gridY": 0,
+      "pointsOfInterest": [],
+      "transitions": {
+        "south": "gradual",
+        "west": "gradual",
+        "east": "gradual"
+      }
+    },
+    {
+      "id": "r-5-0",
+      "name": "Moonlit Sea",
+      "description": "A ocean region.",
+      "biome": "ocean",
+      "elevation": 0.052798944455531516,
+      "moisture": 1,
+      "gridX": 5,
+      "gridY": 0,
+      "pointsOfInterest": [],
+      "transitions": {
+        "south": "gradual",
+        "west": "gradual",
+        "east": "gradual"
+      }
+    },
+    {
+      "id": "r-6-0",
+      "name": "Dark Abyss",
+      "description": "A ocean region.",
+      "biome": "ocean",
+      "elevation": 0.05317135409997825,
+      "moisture": 1,
+      "gridX": 6,
+      "gridY": 0,
+      "pointsOfInterest": [],
+      "transitions": {
+        "south": "gradual",
+        "west": "gradual",
+        "east": "gradual"
+      }
+    },
+    {
+      "id": "r-7-0",
+      "name": "Endless Blue",
+      "description": "A ocean region.",
+      "biome": "ocean",
+      "elevation": 0.12953036778474353,
+      "moisture": 1,
+      "gridX": 7,
+      "gridY": 0,
+      "pointsOfInterest": [],
+      "transitions": {
+        "south": "gradual",
+        "west": "gradual"
+      }
+    },
+    {
+      "id": "r-0-1",
+      "name": "Coral Deep",
+      "description": "A ocean region.",
+      "biome": "ocean",
+      "elevation": 0.12207354924039483,
+      "moisture": 0.9505003751699778,
+      "gridX": 0,
+      "gridY": 1,
+      "pointsOfInterest": [],
+      "transitions": {
+        "north": "gradual",
+        "south": "gradual",
+        "east": "gradual"
+      }
+    },
+    {
+      "id": "r-1-1",
+      "name": "Sandy Shore",
+      "description": "A beach region.",
+      "biome": "beach",
+      "elevation": 0.18705600040299336,
+      "moisture": 0.5673178189568194,
+      "gridX": 1,
+      "gridY": 1,
+      "pointsOfInterest": [],
+      "transitions": {
+        "north": "gradual",
+        "south": "gradual",
+        "west": "gradual",
+        "east": "gradual"
+      }
+    },
+    {
+      "id": "r-2-1",
+      "name": "Surf Break",
+      "description": "A beach region.",
+      "biome": "beach",
+      "elevation": 0.13205378626684305,
+      "moisture": 0.6141831092731613,
+      "gridX": 2,
+      "gridY": 1,
+      "pointsOfInterest": [],
+      "transitions": {
+        "north": "gradual",
+        "south": "gradual",
+        "west": "gradual",
+        "east": "gradual"
+      }
+    },
+    {
+      "id": "r-3-1",
+      "name": "Tide Pools",
+      "description": "A beach region.",
+      "biome": "beach",
+      "elevation": 0.21284932993593944,
+      "moisture": 0.6480085143325183,
+      "gridX": 3,
+      "gridY": 1,
+      "pointsOfInterest": [],
+      "transitions": {
+        "north": "gradual",
+        "south": "gradual",
+        "west": "gradual",
+        "east": "gradual"
+      }
+    },
+    {
+      "id": "r-4-1",
+      "name": "Driftwood Coast",
+      "description": "A beach region.",
+      "biome": "beach",
+      "elevation": 0.20060592426208781,
+      "moisture": 0.6376951127171652,
+      "gridX": 4,
+      "gridY": 1,
+      "pointsOfInterest": [],
+      "transitions": {
+        "north": "gradual",
+        "south": "gradual",
+        "west": "gradual",
+        "east": "gradual"
+      }
+    },
+    {
+      "id": "r-5-1",
+      "name": "Golden Sands",
+      "description": "A beach region.",
+      "biome": "beach",
+      "elevation": 0.1300004896724648,
+      "moisture": 0.5927249983095693,
+      "gridX": 5,
+      "gridY": 1,
+      "pointsOfInterest": [],
+      "transitions": {
+        "north": "gradual",
+        "south": "gradual",
+        "west": "gradual",
+        "east": "gradual"
+      }
+    },
+    {
+      "id": "r-6-1",
+      "name": "Sun Beach",
+      "description": "A beach region.",
+      "biome": "beach",
+      "elevation": 0.20100835184133203,
+      "moisture": 0.5544434869057662,
+      "gridX": 6,
+      "gridY": 1,
+      "pointsOfInterest": [],
+      "transitions": {
+        "north": "gradual",
+        "south": "gradual",
+        "west": "gradual",
+        "east": "gradual"
+      }
+    },
+    {
+      "id": "r-7-1",
+      "name": "Dark Abyss",
+      "description": "A ocean region.",
+      "biome": "ocean",
+      "elevation": 0.11251439200785585,
+      "moisture": 0.9580464235461774,
+      "gridX": 7,
+      "gridY": 1,
+      "pointsOfInterest": [],
+      "transitions": {
+        "north": "gradual",
+        "south": "gradual",
+        "west": "gradual"
+      }
+    },
+    {
+      "id": "r-0-2",
+      "name": "Salt Expanse",
+      "description": "A ocean region.",
+      "biome": "ocean",
+      "elevation": 0.1254648713412841,
+      "moisture": 1,
+      "gridX": 0,
+      "gridY": 2,
+      "pointsOfInterest": [],
+      "transitions": {
+        "north": "gradual",
+        "south": "gradual",
+        "east": "gradual"
+      }
+    },
+    {
+      "id": "r-1-2",
+      "name": "Coral Strand",
+      "description": "A beach region.",
+      "biome": "beach",
+      "elevation": 0.14215987523460358,
+      "moisture": 0.6376951127171652,
+      "gridX": 1,
+      "gridY": 2,
+      "pointsOfInterest": [],
+      "transitions": {
+        "north": "gradual",
+        "south": "gradual",
+        "west": "gradual",
+        "east": "gradual"
+      }
+    },
+    {
+      "id": "r-2-2",
+      "name": "Green Fields",
+      "description": "A grassland region.",
+      "biome": "grassland",
+      "elevation": 0.3360292250900537,
+      "moisture": 0.44272499830956935,
+      "gridX": 2,
+      "gridY": 2,
+      "pointsOfInterest": [],
+      "transitions": {
+        "north": "gradual",
+        "south": "gradual",
+        "west": "gradual",
+        "east": "gradual"
+      }
+    },
+    {
+      "id": "r-3-2",
+      "name": "Wheat Plains",
+      "description": "A grassland region.",
+      "biome": "grassland",
+      "elevation": 0.3994679123311691,
+      "moisture": 0.40444348690576615,
+      "gridX": 3,
+      "gridY": 2,
+      "pointsOfInterest": [],
+      "transitions": {
+        "north": "gradual",
+        "south": "gradual",
+        "west": "gradual",
+        "east": "gradual"
+      }
+    },
+    {
+      "id": "r-4-2",
+      "name": "Wildflower Dale",
+      "description": "A grassland region.",
+      "biome": "grassland",
+      "elevation": 0.3227989444555315,
+      "moisture": 0.4080464235461774,
+      "gridX": 4,
+      "gridY": 2,
+      "pointsOfInterest": [],
+      "transitions": {
+        "north": "gradual",
+        "south": "gradual",
+        "west": "gradual",
+        "east": "gradual"
+      }
+    },
+    {
+      "id": "r-5-2",
+      "name": "Rolling Hills",
+      "description": "A grassland region.",
+      "biome": "grassland",
+      "elevation": 0.3231713540999782,
+      "moisture": 0.45022128489940255,
+      "gridX": 5,
+      "gridY": 2,
+      "pointsOfInterest": [],
+      "transitions": {
+        "north": "gradual",
+        "south": "gradual",
+        "west": "gradual",
+        "east": "gradual"
+      }
+    },
+    {
+      "id": "r-6-2",
+      "name": "Golden Sands",
+      "description": "A beach region.",
+      "biome": "beach",
+      "elevation": 0.2295303677847435,
+      "moisture": 0.6421926979366246,
+      "gridX": 6,
+      "gridY": 2,
+      "pointsOfInterest": [],
+      "transitions": {
+        "north": "gradual",
+        "south": "gradual",
+        "west": "gradual",
+        "east": "gradual"
+      }
+    },
+    {
+      "id": "r-7-2",
+      "name": "Moonlit Sea",
+      "description": "A ocean region.",
+      "biome": "ocean",
+      "elevation": 0.06560483416674673,
+      "moisture": 1,
+      "gridX": 7,
+      "gridY": 2,
+      "pointsOfInterest": [],
+      "transitions": {
+        "north": "gradual",
+        "south": "gradual",
+        "west": "gradual"
+      }
+    },
+    {
+      "id": "r-0-3",
+      "name": "Endless Blue",
+      "description": "A ocean region.",
+      "biome": "ocean",
+      "elevation": 0.08705600040299336,
+      "moisture": 0.9544434869057662,
+      "gridX": 0,
+      "gridY": 3,
+      "pointsOfInterest": [],
+      "transitions": {
+        "north": "gradual",
+        "south": "gradual",
+        "east": "gradual"
+      }
+    },
+    {
+      "id": "r-1-3",
+      "name": "Palm Coast",
+      "description": "A beach region.",
+      "biome": "beach",
+      "elevation": 0.13205378626684305,
+      "moisture": 0.5580464235461774,
+      "gridX": 1,
+      "gridY": 3,
+      "pointsOfInterest": [],
+      "transitions": {
+        "north": "gradual",
+        "south": "gradual",
+        "west": "gradual",
+        "east": "gradual"
+      }
+    },
+    {
+      "id": "r-2-3",
+      "name": "Prairie",
+      "description": "A grassland region.",
+      "biome": "grassland",
+      "elevation": 0.38284932993593945,
+      "moisture": 0.45022128489940255,
+      "gridX": 2,
+      "gridY": 3,
+      "pointsOfInterest": [],
+      "transitions": {
+        "north": "gradual",
+        "south": "gradual",
+        "west": "gradual",
+        "east": "gradual"
+      }
+    },
+    {
+      "id": "r-3-3",
+      "name": "Dark Wood",
+      "description": "A forest region.",
+      "biome": "forest",
+      "elevation": 0.5206059242620878,
+      "moisture": 0.7421926979366246,
+      "gridX": 3,
+      "gridY": 3,
+      "pointsOfInterest": [],
+      "transitions": {
+        "north": "gradual",
+        "south": "gradual",
+        "west": "gradual",
+        "east": "gradual"
+      }
+    },
+    {
+      "id": "r-4-3",
+      "name": "Deepwood",
+      "description": "A forest region.",
+      "biome": "forest",
+      "elevation": 0.4500004896724648,
+      "moisture": 0.7453723390725098,
+      "gridX": 4,
+      "gridY": 3,
+      "pointsOfInterest": [],
+      "transitions": {
+        "north": "gradual",
+        "south": "gradual",
+        "west": "gradual",
+        "east": "gradual"
+      }
+    },
+    {
+      "id": "r-5-3",
+      "name": "Wildflower Dale",
+      "description": "A grassland region.",
+      "biome": "grassland",
+      "elevation": 0.371008351841332,
+      "moisture": 0.4568368609103917,
+      "gridX": 5,
+      "gridY": 3,
+      "pointsOfInterest": [],
+      "transitions": {
+        "north": "gradual",
+        "south": "gradual",
+        "west": "gradual",
+        "east": "gradual"
+      }
+    },
+    {
+      "id": "r-6-3",
+      "name": "Driftwood Coast",
+      "description": "A beach region.",
+      "biome": "beach",
+      "elevation": 0.21251439200785582,
+      "moisture": 0.5620156043570589,
+      "gridX": 6,
+      "gridY": 3,
+      "pointsOfInterest": [],
+      "transitions": {
+        "north": "gradual",
+        "south": "gradual",
+        "west": "gradual",
+        "east": "gradual"
+      }
+    },
+    {
+      "id": "r-7-3",
+      "name": "Sapphire Bay",
+      "description": "A ocean region.",
+      "biome": "ocean",
+      "elevation": 0.03193012540602216,
+      "moisture": 0.9521170259838307,
+      "gridX": 7,
+      "gridY": 3,
+      "pointsOfInterest": [],
+      "transitions": {
+        "north": "gradual",
+        "south": "gradual",
+        "west": "gradual"
+      }
+    },
+    {
+      "id": "r-0-4",
+      "name": "Dark Abyss",
+      "description": "A ocean region.",
+      "biome": "ocean",
+      "elevation": 0.042159875234603586,
+      "moisture": 1,
+      "gridX": 0,
+      "gridY": 4,
+      "pointsOfInterest": [],
+      "transitions": {
+        "north": "gradual",
+        "south": "gradual",
+        "east": "gradual"
+      }
+    },
+    {
+      "id": "r-1-4",
+      "name": "Pebble Cove",
+      "description": "A beach region.",
+      "biome": "beach",
+      "elevation": 0.1660292250900537,
+      "moisture": 0.6453723390725098,
+      "gridX": 1,
+      "gridY": 4,
+      "pointsOfInterest": [],
+      "transitions": {
+        "north": "gradual",
+        "south": "gradual",
+        "west": "gradual",
+        "east": "gradual"
+      }
+    },
+    {
+      "id": "r-2-4",
+      "name": "Grazing Lands",
+      "description": "A grassland region.",
+      "biome": "grassland",
+      "elevation": 0.3994679123311691,
+      "moisture": 0.4568368609103917,
+      "gridX": 2,
+      "gridY": 4,
+      "pointsOfInterest": [],
+      "transitions": {
+        "north": "gradual",
+        "south": "gradual",
+        "west": "gradual",
+        "east": "gradual"
+      }
+    },
+    {
+      "id": "r-3-4",
+      "name": "Fern Glade",
+      "description": "A forest region.",
+      "biome": "forest",
+      "elevation": 0.4727989444555315,
+      "moisture": 0.6620156043570589,
+      "gridX": 3,
+      "gridY": 4,
+      "pointsOfInterest": [],
+      "transitions": {
+        "north": "gradual",
+        "south": "gradual",
+        "west": "gradual",
+        "east": "gradual"
+      }
+    },
+    {
+      "id": "r-4-4",
+      "name": "Dark Wood",
+      "description": "A forest region.",
+      "biome": "forest",
+      "elevation": 0.47317135409997824,
+      "moisture": 0.6521170259838307,
+      "gridX": 4,
+      "gridY": 4,
+      "pointsOfInterest": [],
+      "transitions": {
+        "north": "gradual",
+        "south": "gradual",
+        "west": "gradual",
+        "east": "gradual"
+      }
+    },
+    {
+      "id": "r-5-4",
+      "name": "Wheat Plains",
+      "description": "A grassland region.",
+      "biome": "grassland",
+      "elevation": 0.3995303677847435,
+      "moisture": 0.43624183309742015,
+      "gridX": 5,
+      "gridY": 4,
+      "pointsOfInterest": [],
+      "transitions": {
+        "north": "gradual",
+        "south": "gradual",
+        "west": "gradual",
+        "east": "gradual"
+      }
+    },
+    {
+      "id": "r-6-4",
+      "name": "Tide Pools",
+      "description": "A beach region.",
+      "biome": "beach",
+      "elevation": 0.16560483416674673,
+      "moisture": 0.633015835412204,
+      "gridX": 6,
+      "gridY": 4,
+      "pointsOfInterest": [],
+      "transitions": {
+        "north": "gradual",
+        "south": "gradual",
+        "west": "gradual",
+        "east": "gradual"
+      }
+    },
+    {
+      "id": "r-7-4",
+      "name": "Storm Sea",
+      "description": "A ocean region.",
+      "biome": "ocean",
+      "elevation": 0.04245063766141619,
+      "moisture": 1,
+      "gridX": 7,
+      "gridY": 4,
+      "pointsOfInterest": [],
+      "transitions": {
+        "north": "gradual",
+        "south": "gradual",
+        "west": "gradual"
+      }
+    },
+    {
+      "id": "r-0-5",
+      "name": "Moonlit Sea",
+      "description": "A ocean region.",
+      "biome": "ocean",
+      "elevation": 0.032053786266843076,
+      "moisture": 0.9620156043570589,
+      "gridX": 0,
+      "gridY": 5,
+      "pointsOfInterest": [],
+      "transitions": {
+        "north": "gradual",
+        "south": "gradual",
+        "east": "gradual"
+      }
+    },
+    {
+      "id": "r-1-5",
+      "name": "Shell Beach",
+      "description": "A beach region.",
+      "biome": "beach",
+      "elevation": 0.21284932993593944,
+      "moisture": 0.5521170259838307,
+      "gridX": 1,
+      "gridY": 5,
+      "pointsOfInterest": [],
+      "transitions": {
+        "north": "gradual",
+        "south": "gradual",
+        "west": "gradual",
+        "east": "gradual"
+      }
+    },
+    {
+      "id": "r-2-5",
+      "name": "Sunlit Pasture",
+      "description": "A grassland region.",
+      "biome": "grassland",
+      "elevation": 0.3706059242620878,
+      "moisture": 0.43624183309742015,
+      "gridX": 2,
+      "gridY": 5,
+      "pointsOfInterest": [],
+      "transitions": {
+        "north": "gradual",
+        "south": "gradual",
+        "west": "gradual",
+        "east": "gradual"
+      }
+    },
+    {
+      "id": "r-3-5",
+      "name": "Grazing Lands",
+      "description": "A grassland region.",
+      "biome": "grassland",
+      "elevation": 0.3000004896724648,
+      "moisture": 0.483015835412204,
+      "gridX": 3,
+      "gridY": 5,
+      "pointsOfInterest": [],
+      "transitions": {
+        "north": "gradual",
+        "south": "gradual",
+        "west": "gradual",
+        "east": "gradual"
+      }
+    },
+    {
+      "id": "r-4-5",
+      "name": "Prairie",
+      "description": "A grassland region.",
+      "biome": "grassland",
+      "elevation": 0.371008351841332,
+      "moisture": 0.4994352309093335,
+      "gridX": 4,
+      "gridY": 5,
+      "pointsOfInterest": [],
+      "transitions": {
+        "north": "gradual",
+        "south": "gradual",
+        "west": "gradual",
+        "east": "gradual"
+      }
+    },
+    {
+      "id": "r-5-5",
+      "name": "Green Fields",
+      "description": "A grassland region.",
+      "biome": "grassland",
+      "elevation": 0.3825143920078558,
+      "moisture": 0.4704041030906696,
+      "gridX": 5,
+      "gridY": 5,
+      "pointsOfInterest": [],
+      "transitions": {
+        "north": "gradual",
+        "south": "gradual",
+        "west": "gradual",
+        "east": "gradual"
+      }
+    },
+    {
+      "id": "r-6-5",
+      "name": "Surf Break",
+      "description": "A beach region.",
+      "biome": "beach",
+      "elevation": 0.13193012540602214,
+      "moisture": 0.5726135369887866,
+      "gridX": 6,
+      "gridY": 5,
+      "pointsOfInterest": [],
+      "transitions": {
+        "north": "gradual",
+        "south": "gradual",
+        "west": "gradual",
+        "east": "gradual"
+      }
+    },
+    {
+      "id": "r-7-5",
+      "name": "Tidal Reach",
+      "description": "A ocean region.",
+      "biome": "ocean",
+      "elevation": 0.08749386048314761,
+      "moisture": 0.9500019586802682,
+      "gridX": 7,
+      "gridY": 5,
+      "pointsOfInterest": [],
+      "transitions": {
+        "north": "gradual",
+        "south": "gradual",
+        "west": "gradual"
+      }
+    },
+    {
+      "id": "r-0-6",
+      "name": "Sapphire Bay",
+      "description": "A ocean region.",
+      "biome": "ocean",
+      "elevation": 0.06602922509005371,
+      "moisture": 1,
+      "gridX": 0,
+      "gridY": 6,
+      "pointsOfInterest": [],
+      "transitions": {
+        "north": "gradual",
+        "south": "gradual",
+        "east": "gradual"
+      }
+    },
+    {
+      "id": "r-1-6",
+      "name": "Sun Beach",
+      "description": "A beach region.",
+      "biome": "beach",
+      "elevation": 0.2294679123311691,
+      "moisture": 0.6494352309093334,
+      "gridX": 1,
+      "gridY": 6,
+      "pointsOfInterest": [],
+      "transitions": {
+        "north": "gradual",
+        "south": "gradual",
+        "west": "gradual",
+        "east": "gradual"
+      }
+    },
+    {
+      "id": "r-2-6",
+      "name": "Shell Beach",
+      "description": "A beach region.",
+      "biome": "beach",
+      "elevation": 0.1527989444555315,
+      "moisture": 0.6204041030906696,
+      "gridX": 2,
+      "gridY": 6,
+      "pointsOfInterest": [],
+      "transitions": {
+        "north": "gradual",
+        "south": "gradual",
+        "west": "gradual",
+        "east": "gradual"
+      }
+    },
+    {
+      "id": "r-3-6",
+      "name": "Pebble Cove",
+      "description": "A beach region.",
+      "biome": "beach",
+      "elevation": 0.15317135409997823,
+      "moisture": 0.5726135369887866,
+      "gridX": 3,
+      "gridY": 6,
+      "pointsOfInterest": [],
+      "transitions": {
+        "north": "gradual",
+        "south": "gradual",
+        "west": "gradual",
+        "east": "gradual"
+      }
+    },
+    {
+      "id": "r-4-6",
+      "name": "Palm Coast",
+      "description": "A beach region.",
+      "biome": "beach",
+      "elevation": 0.2295303677847435,
+      "moisture": 0.5500019586802681,
+      "gridX": 4,
+      "gridY": 6,
+      "pointsOfInterest": [],
+      "transitions": {
+        "north": "gradual",
+        "south": "gradual",
+        "west": "gradual",
+        "east": "gradual"
+      }
+    },
+    {
+      "id": "r-5-6",
+      "name": "Coral Strand",
+      "description": "A beach region.",
+      "biome": "beach",
+      "elevation": 0.16560483416674673,
+      "moisture": 0.57335834898333,
+      "gridX": 5,
+      "gridY": 6,
+      "pointsOfInterest": [],
+      "transitions": {
+        "north": "gradual",
+        "south": "gradual",
+        "west": "gradual",
+        "east": "gradual"
+      }
+    },
+    {
+      "id": "r-6-6",
+      "name": "Sandy Shore",
+      "description": "A beach region.",
+      "biome": "beach",
+      "elevation": 0.1424506376614162,
+      "moisture": 0.6212089503668499,
+      "gridX": 6,
+      "gridY": 6,
+      "pointsOfInterest": [],
+      "transitions": {
+        "north": "gradual",
+        "south": "gradual",
+        "west": "gradual",
+        "east": "gradual"
+      }
+    },
+    {
+      "id": "r-7-6",
+      "name": "Whale Road",
+      "description": "A ocean region.",
+      "biome": "ocean",
+      "elevation": 0.1256472625363814,
+      "moisture": 1,
+      "gridX": 7,
+      "gridY": 6,
+      "pointsOfInterest": [],
+      "transitions": {
+        "north": "gradual",
+        "south": "gradual",
+        "west": "gradual"
+      }
+    },
+    {
+      "id": "r-0-7",
+      "name": "Storm Sea",
+      "description": "A ocean region.",
+      "biome": "ocean",
+      "elevation": 0.11284932993593946,
+      "moisture": 0.9726135369887866,
+      "gridX": 0,
+      "gridY": 7,
+      "pointsOfInterest": [],
+      "transitions": {
+        "north": "gradual",
+        "east": "gradual"
+      }
+    },
+    {
+      "id": "r-1-7",
+      "name": "Sapphire Bay",
+      "description": "A ocean region.",
+      "biome": "ocean",
+      "elevation": 0.10060592426208784,
+      "moisture": 0.9500019586802682,
+      "gridX": 1,
+      "gridY": 7,
+      "pointsOfInterest": [],
+      "transitions": {
+        "north": "gradual",
+        "west": "gradual",
+        "east": "gradual"
+      }
+    },
+    {
+      "id": "r-2-7",
+      "name": "Moonlit Sea",
+      "description": "A ocean region.",
+      "biome": "ocean",
+      "elevation": 0.030000489672464825,
+      "moisture": 0.9733583489833302,
+      "gridX": 2,
+      "gridY": 7,
+      "pointsOfInterest": [],
+      "transitions": {
+        "north": "gradual",
+        "west": "gradual",
+        "east": "gradual"
+      }
+    },
+    {
+      "id": "r-3-7",
+      "name": "Dark Abyss",
+      "description": "A ocean region.",
+      "biome": "ocean",
+      "elevation": 0.10100835184133206,
+      "moisture": 1,
+      "gridX": 3,
+      "gridY": 7,
+      "pointsOfInterest": [],
+      "transitions": {
+        "north": "gradual",
+        "west": "gradual",
+        "east": "gradual"
+      }
+    },
+    {
+      "id": "r-4-7",
+      "name": "Endless Blue",
+      "description": "A ocean region.",
+      "biome": "ocean",
+      "elevation": 0.11251439200785585,
+      "moisture": 1,
+      "gridX": 4,
+      "gridY": 7,
+      "pointsOfInterest": [],
+      "transitions": {
+        "north": "gradual",
+        "west": "gradual",
+        "east": "gradual"
+      }
+    },
+    {
+      "id": "r-5-7",
+      "name": "Salt Expanse",
+      "description": "A ocean region.",
+      "biome": "ocean",
+      "elevation": 0.03193012540602216,
+      "moisture": 1,
+      "gridX": 5,
+      "gridY": 7,
+      "pointsOfInterest": [],
+      "transitions": {
+        "north": "gradual",
+        "west": "gradual",
+        "east": "gradual"
+      }
+    },
+    {
+      "id": "r-6-7",
+      "name": "Coral Deep",
+      "description": "A ocean region.",
+      "biome": "ocean",
+      "elevation": 0.08749386048314761,
+      "moisture": 0.9853930595633081,
+      "gridX": 6,
+      "gridY": 7,
+      "pointsOfInterest": [],
+      "transitions": {
+        "north": "gradual",
+        "west": "gradual",
+        "east": "gradual"
+      }
+    },
+    {
+      "id": "r-7-7",
+      "name": "Deep Waters",
+      "description": "A ocean region.",
+      "biome": "ocean",
+      "elevation": 0.1218327819268028,
+      "moisture": 0.9518697066843217,
+      "gridX": 7,
+      "gridY": 7,
+      "pointsOfInterest": [],
+      "transitions": {
+        "north": "gradual",
+        "west": "gradual"
+      }
+    }
+  ]
+}
